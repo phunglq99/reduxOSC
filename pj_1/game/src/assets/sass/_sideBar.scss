@@ -1,8 +1,7 @@
 .sidebar {
-    position: fixed;
     .side {
-        &-header {
-            width: 344px;
+        &-left {
+            position: sticky;
             justify-content: center;
             align-items: center;
         }
@@ -33,11 +32,14 @@
         }
 
         &-menu_title {
+            position: relative;
             height: 100vh;
+            padding-left: 0!important;
+            padding-right: 0!important;
             background-color: $bg-sidebar-2;
 
             h4 {
-                padding: 12px 0;
+                padding: 12px 10px;
             }
         }
 
@@ -75,15 +77,121 @@
         }
 
         &-music {
-            width: 344px;
-            height: 84px;
             position: absolute;
-            left: 0px;
-            bottom: 110px;
-            transform: translateX(-12px);
+            width: 100%;
+            bottom: 58px;
+            z-index: 2;
 
             img {
                 width: 100%;
+            }
+        }
+
+        &-profile {
+            padding: 28px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-color:#1D203E;
+            z-index: 1;
+
+            h5 {
+                font-size: 12px;
+            }
+
+            &_mic {
+                i {
+                    color: white;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: all 150ms ease-in-out;
+                    }
+                }
+            }
+            .test {
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 150ms ease-in-out;
+                }
+            }
+            .customize-pentagon {
+                display: inline-block;
+                width: 30px;
+                height: 16px;
+                position: relative;
+                background-color: #1D203E;
+                cursor: pointer;
+
+                i {
+                    font-size: 12px;
+                    &::before {
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .customize-pentagon:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: -10px;
+                left: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 10px solid #1D203E;
+            }
+
+            .customize-pentagon:after {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: -9px;
+                left: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 10px solid #1D203E;
+            }
+
+            //pentagon-outline
+            .customize-pentagon_outline {
+                display: inline-block;
+                width: 35px;
+                height: 16px;
+                position: absolute;
+                left: -3px;
+                background: linear-gradient(to right, rgba(167, 62, 231, 100%), rgba(0 , 235, 255, 100%));
+                z-index: -1;
+            }
+
+            .customize-pentagon_outline:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: -12px;
+                left: 0;
+                border-left: 18px solid transparent;
+                border-right: 18px solid transparent;
+                border-bottom: 12px solid rgba(167, 62, 231, 1);
+                z-index: -1;
+            }
+
+            .customize-pentagon_outline:after {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: -12px;
+                left: 0;
+                border-left: 18px solid transparent;
+                border-right: 18px solid transparent;
+                border-top: 12px solid rgba(0, 235, 255, 1);
+                z-index: -1;
             }
         }
     }
