@@ -4,7 +4,7 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
-import { Button } from '../components';
+import { Button, Stacked } from '../components';
 import { SparkLine } from '../components'
 
 
@@ -93,6 +93,20 @@ const Ecommerce = () => {
                                     color="blue"
                                 />
                             </div>
+                            <div className="mt-10">
+                                <Button
+                                    color="white"
+                                    bgColor="blue"
+                                    text="Download Report"
+                                    borderRadius="10px"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <Stacked
+                                width="320px"
+                                height="360px"
+                            />
                         </div>
                     </div>
                 </div>
