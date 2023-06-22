@@ -11,7 +11,7 @@ const Kanban = () => (
             id="kanban"
             keyField="Status"
             dataSource={kanbanData}
-            cardSettings={{ contentField: 'Summary', headerField: 'Id' }}
+            cardSettings={{ contentField: "Summary", headerField: 'Id' }}
         >
             <ColumnsDirective>
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
