@@ -12,13 +12,14 @@ import './App.css';
 
 const App = () => {
 
-    const { activeMenu } = useStateContext();
+    const { activeMenu, themeSettings } = useStateContext();
 
-    const childRef = useRef();
+    //Learn useRef
+    // const childRef = useRef();
 
-    const handleClick = () => {
-        childRef.current.click();
-    };
+    // const handleClick = () => {
+    //     childRef.current.click();
+    // };
 
     return (
         <BrowserRouter>
@@ -39,10 +40,12 @@ const App = () => {
                         <Navbar />
                     </div>
                     <div>
+                        {/* Learn useRef
                         <div>
                             <ThemeSetting childRef={childRef} click={(test)=> console.log(test)}/>
                             <button onClick={handleClick}>Click me</button>
-                        </div>
+                        </div> */}
+                        { themeSettings && <ThemeSetting />}
 
                         <Routes>
                             {/* Dashboard */}
