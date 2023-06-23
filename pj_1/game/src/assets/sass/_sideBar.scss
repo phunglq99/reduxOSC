@@ -110,12 +110,14 @@
                     }
                 }
             }
+
             .test {
+                background-color: transparent;
                 &:hover {
-                    transform: scale(1.1);
-                    transition: all 150ms ease-in-out;
+                    opacity: 0.5;
                 }
             }
+
             .customize-pentagon {
                 display: inline-block;
                 width: 30px;
