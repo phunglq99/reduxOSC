@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -13,6 +13,12 @@ import './App.css';
 const App = () => {
 
     const { activeMenu } = useStateContext();
+
+    const childRef = useRef();
+
+    const handleClick = () => {
+        childRef.current.click();
+    };
 
     return (
         <BrowserRouter>
@@ -33,7 +39,11 @@ const App = () => {
                         <Navbar />
                     </div>
                     <div>
-                        <ThemeSetting />
+                        <div>
+                            <ThemeSetting childRef={childRef} click={(test)=> console.log(test)}/>
+                            <button onClick={handleClick}>Click me</button>
+                        </div>
+
                         <Routes>
                             {/* Dashboard */}
                             <Route path="/" element={<Ecommerce />} />
